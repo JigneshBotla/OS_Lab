@@ -1,0 +1,43 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+
+void OPEN_CHECK() {
+    int file = open("data2.txt", 0);
+    if (file!=-1){
+        printf("File opened\n");
+    } 
+    else {
+        printf("Error in opening file\n");
+    }
+}
+
+void CREATE_CHECK(){
+	int file=creat("data3.txt",2);
+	if (file!=-1){
+        printf("File created\n");
+    	} 
+    	else {
+        printf("Error in creating file\n");
+    	}
+}
+
+void DUPLICATE_CHECK(){
+	int file=dup("data2.txt");
+	if (file!=-1){
+        printf("File copy succesful\n");
+        } 
+        else {
+        printf("Error in copying file\n");
+        }
+
+}
+
+int main() {
+    OPEN_CHECK();
+    CREATE_CHECK();
+    DUPLICATE_CHECK();
+    return 0;
+}
+
